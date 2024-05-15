@@ -16,6 +16,12 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('asignaturas.index') }}" :active="request()->routeIs('asignaturas.index')">
+                        {{ __('asignaturas') }}
+                    </x-nav-link>
+                </div>
+
 
                 <x-nav-link href="{{ route('students.index') }}" :active="request()->routeIs('students.index')">
                     {{ __('Students') }}

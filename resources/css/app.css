@@ -1,7 +1,48 @@
+/* app.css */
+
+/* Tailwind CSS base, componentes y utilidades */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Estilos personalizados */
 [x-cloak] {
     display: none;
 }
+
+/* Agrega tus estilos personalizados aquí */
+/* Por ejemplo: */
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para los botones */
+.button {
+    display: inline-block;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
