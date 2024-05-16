@@ -4,7 +4,48 @@
             {{ __('Delete Asignatura') }}
         </h2>
     </x-slot>
+<style>
+    /* Estilos para el formulario de creación de asignatura */
+*{
+    background-color: blueviolet;
+    color:aliceblue;
+}
+    .form-input {
+    border: 1px solid #cbd5e0;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
 
+.form-input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+.form-label {
+    color: #4a5568;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.btn-submit {
+    background-color: salmon;
+    color:black;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: steelblue;
+}
+
+</style>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6 lg:p-8">

@@ -11,14 +11,10 @@ class AsignaturaController extends Controller
     {
         $asignaturas = Asignatura::all();
         return view('asignaturas.index', compact('asignaturas'));
-
-        //alternativas a compact
-        //return view('students.index')->with('students', $students);
-        //return view('students.index', ['students' => $students]);
     }
+
     public function create()
     {
-        
         return view('asignaturas.create');
     }
 
@@ -27,13 +23,13 @@ class AsignaturaController extends Controller
         // Validar los datos del formulario
         $request->validate([
             'nombre' => 'required|string|min:5|max:255',
-            'aula' => 'required|integer|min:1',
+            'aula' => 'required|string',
         ]);
 
-         // Crear un nuevo estudiante usando el método `create` del modelo
+        // Crear una nueva asignatura usando el método `create` del modelo
         Asignatura::create($request->all());
 
-        // Redireccionar a la vista de listado de estudiantes
+        // Redireccionar a la vista de listado de asignaturas
         return redirect()->route('asignaturas.index');
     }
 
@@ -53,26 +49,24 @@ class AsignaturaController extends Controller
         // Validar los datos del formulario
         $request->validate([
             'nombre' => 'required|string|min:5|max:255',
-            'aula' => 'required',
+            'aula' => 'required|string',
+            'profesor' => 'required|string',
         ]);
 
-        // Buscar el estudiante por su ID
+        // Buscar la asignatura por su ID
         $asignatura = Asignatura::findOrFail($id);
 
-        // Actualizar los datos del estudiante
+        // Actualizar los datos de la asignatura
         $asignatura->update($request->all());
 
-        // Redireccionar a la vista de listado de estudiantes
+        // Redireccionar a la vista de listado de asignaturas
         return redirect()->route('asignaturas.index');
     }
 
     public function destroy(string $id)
     {
         $asignatura = Asignatura::findOrFail($id);
-
         $asignatura->delete();
-
-        return redirect()->route('asignatura.index');
+        return redirect()->route('asignaturas.index');
     }
 }
-
